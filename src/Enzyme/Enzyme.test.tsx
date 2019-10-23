@@ -7,13 +7,13 @@ import Grandson from "../components/Grandson";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe.skip("enzyme test", () => {
-  describe("snap", () => {
-    it("renders <Parent /> components with shallow", () => {
-      const wrapper = render(<Parent />);
-      expect(wrapper).toMatchSnapshot();
-    });
-  });
+describe("enzyme test", () => {
+  // describe("snap", () => {
+  //   it("renders <Parent /> components with shallow", () => {
+  //     const wrapper = render(<Parent />);
+  //     expect(wrapper).toMatchSnapshot();
+  //   });
+  // });
 
   describe("different between shallow and mount", () => {
     it("renders <Parent /> components with shallow", () => {
@@ -39,8 +39,8 @@ describe.skip("enzyme test", () => {
   describe("different between shallow and mount", () => {
     it("check child component with shallow", () => {
       const wrapper = shallow(<Parent />);
-      console.log(wrapper.find(Child).length);
-      console.log(wrapper.find("Child").length);
+      // console.log(wrapper.find(Child).length);
+      // console.log(wrapper.find("Child").length);
       expect(
         wrapper
           .find(Child)
@@ -51,8 +51,8 @@ describe.skip("enzyme test", () => {
 
     it("check child component with shallow", () => {
       const wrapper = mount(<Parent />);
-      console.log(wrapper.find(Child).length);
-      console.log(wrapper.find("Child").length);
+      // console.log(wrapper.find(Child).length);
+      // console.log(wrapper.find("Child").length);
 
       expect(
         wrapper
@@ -60,6 +60,16 @@ describe.skip("enzyme test", () => {
           .first()
           .find(Grandson).length
       ).toBe(1);
+    });
+  });
+
+  describe("user operator", () => {
+    it("renders <Parent /> components with shallow", () => {
+      const wrapper = shallow(<Parent />);
+      // expect(wrapper.find(Child).props);
+      const oneBtn = wrapper.find("button").at(0);
+      oneBtn.simulate("click");
+      // expect(oneBtn).toHaveBeenCalled();
     });
   });
 });
