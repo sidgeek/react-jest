@@ -1,11 +1,8 @@
 import React from "react";
-import Enzyme, { shallow, mount, render } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
+import { shallow, mount, render } from "enzyme";
 import Parent from "../components/Parent";
 import Child from "../components/Child";
 import Grandson from "../components/Grandson";
-
-Enzyme.configure({ adapter: new Adapter() });
 
 describe("enzyme test", () => {
   // describe("snap", () => {
