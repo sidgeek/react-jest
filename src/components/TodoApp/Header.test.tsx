@@ -1,9 +1,6 @@
 import React from "react";
-import Enzyme, { shallow } from "enzyme";
+import { shallow } from "enzyme";
 import Header from "./Header";
-import Adapter from "enzyme-adapter-react-16";
-
-Enzyme.configure({ adapter: new Adapter() });
 
 describe("Header component test", () => {
   it("包含一个 input 框, 初始化应该为空", () => {
