@@ -35,18 +35,14 @@ class Header extends Component<IProps, IState> {
   render() {
     const { value } = this.state;
     return (
-      <div className="header">
-        <div className="header-content">
-          TodoList
-          <input
-            placeholder="Add Todo"
-            className="header-input"
-            data-test="input"
-            value={value}
-            onChange={this.handleInputChange}
-            onKeyUp={this.handleInputKeyUp}
-          />
-        </div>
+      <div>
+        TodoList
+        <input
+          placeholder="Add Todo"
+          value={value}
+          onChange={this.handleInputChange}
+          onKeyUp={this.handleInputKeyUp}
+        />
       </div>
     );
   }
