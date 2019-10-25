@@ -1,10 +1,15 @@
 import React from "react";
-import TodoList from "./components/TodoApp4/TodoList";
+import TodoList from "./components/TodoApp5/TodoList";
+
+import store from "./components/TodoApp5/store";
+import { StoreContext } from "redux-react-hook";
 
 const App: React.FC = () => {
   return (
     <div>
-      <TodoList></TodoList>
+      <StoreContext.Provider value={store}>
+        <TodoList></TodoList>
+      </StoreContext.Provider>
     </div>
   );
 };
